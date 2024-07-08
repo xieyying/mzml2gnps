@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mzml2gnps"
+version = "0.1.0"
+authors = [{name = "YunyingXie", email = "xieyy@imb.pumc.edu.cn"}]
+description = "A package for preprocessing mzML files for GNPS molecular networking"
+readme = "README.md"
+license = {text = "MIT"}
+dependencies = [
+    "pandas == 2.0.3",
+    "numpy == 1.22.0",
+    "pyopenms == 3.1.0",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+]
+# python-requires = ">=3.7"
+
+[project.scripts]
+mzml2gnps = "mzml2gnps.command_line:main"
+
+[project.urls]
+homepage = "https://github.com/xieyying/mzml2gnps"

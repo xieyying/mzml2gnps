@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+mzml2gnps/command_line.py
+mzml2gnps/main.py
+mzml2gnps/methods.py
+mzml2gnps/test.py
+mzml2gnps.egg-info/PKG-INFO
+mzml2gnps.egg-info/SOURCES.txt
+mzml2gnps.egg-info/dependency_links.txt
+mzml2gnps.egg-info/entry_points.txt
+mzml2gnps.egg-info/requires.txt
+mzml2gnps.egg-info/top_level.txt
