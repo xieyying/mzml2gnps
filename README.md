@@ -45,32 +45,44 @@ This will automatically handle the dependencies listed in `pyproject.toml`.
 The script can be executed from the command line with various arguments to specify the input and output paths, filtering criteria, and whether to perform precursor correction and spectra merging.
 
 ### Command Line Arguments
+usage: mzml2gnps [-h] [--version] [-i INPUT_PATH] [-o OUTPUT_PATH] [--correct] [--merge] [--precmz PRECMZ] [--rt RT] [--precmz_tolerance PRECMZ_TOLERANCE] [--rt_tolerance RT_TOLERANCE] [--precinty_thre PRECINTY_THRE] [--csv CSV]
 
-- `--file_path`: Input mzML file path or folder path containing mzML files (required).
-- `--output_path`: Output folder path (required).
-- `--precmz`: List of precursor m/z values (optional).
-- `--rt`: List of retention times (optional).
-- `--precmz_tolerance`: Precursor m/z tolerance (default: 20).
-- `--rt_tolerance`: Retention time tolerance (default: 0.5).
-- `--precinty_thre`: Precursor intensity threshold (default: 0).
-- `--csv`: CSV file path including `precmz` and `rt` columns (optional).
-- `--correct`: Flag to enable precursor correction (default: False).
-- `--merge`: Flag to enable spectra merging (default: False).
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+  -i INPUT_PATH, --input_path INPUT_PATH
+                        Input mzML file path or folder path containing mzML files
+  -o OUTPUT_PATH, --output_path OUTPUT_PATH
+                        Output folder path
+  --correct             Correct precursors, default is False (use flag to enable)
+  --merge               Merge spectra, default is False (use flag to enable)
+  --precmz PRECMZ       CSV file path for list of precursor m/z values
+  --rt RT               CSV file path for list of retention times
+  --precmz_tolerance PRECMZ_TOLERANCE
+                        Precursor m/z tolerance (in ppm)
+  --rt_tolerance RT_TOLERANCE
+                        Retention time tolerance (in seconds)
+  --precinty_thre PRECINTY_THRE
+                        Precursor intensity threshold
+  --csv CSV             CSV file path including precmz and rt columns, default is None
+
 
 ### Example
 
 ```shell
-python mzml2gnps.py --file_path input.mzML --output_path /path/to/output --correct
+python mzml2gnps.py -i input.mzML -o /path/to/output --correct
+```
+This command processes the input.mzML file, corrects precursors and saves the processed spectra to the output path.
 
-This command processes the input.mzML file, corrects precursors and saves the processed spectra to the specified output path.
+```shell
+python mzml2gnps.py -i /path/to/input -o /path/to/output --correct
+```
+This command processes all the files endwith .mzML in the input folder, corrects precursors and saves the processed spectra to the output path.
 
 Development
 This script was developed using Python and relies on the pyopenms library for handling mzML files and MS data processing.
 
 Contributing
 If you have suggestions for how mzml2gnps could be improved, or want to report a bug, open an issue! We'd love all and any contributions.
-
-For more, check out the Contributing Guide.
 
 License
 MIT © Yunying Xie
