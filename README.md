@@ -44,28 +44,6 @@ This will automatically handle the dependencies listed in `pyproject.toml`.
 
 The script can be executed from the command line with various arguments to specify the input and output paths, filtering criteria, and whether to perform precursor correction and spectra merging.
 
-### Command Line Arguments
-usage: mzml2gnps [-h] [--version] [-i INPUT_PATH] [-o OUTPUT_PATH] [--correct] [--merge] [--precmz PRECMZ] [--rt RT] [--precmz_tolerance PRECMZ_TOLERANCE] [--rt_tolerance RT_TOLERANCE] [--precinty_thre PRECINTY_THRE] [--csv CSV]
-
-  -h, --help            show this help message and exit
-  --version             show program's version number and exit
-  -i INPUT_PATH, --input_path INPUT_PATH
-                        Input mzML file path or folder path containing mzML files
-  -o OUTPUT_PATH, --output_path OUTPUT_PATH
-                        Output folder path
-  --correct             Correct precursors, default is False (use flag to enable)
-  --merge               Merge spectra, default is False (use flag to enable)
-  --precmz PRECMZ       CSV file path for list of precursor m/z values
-  --rt RT               CSV file path for list of retention times
-  --precmz_tolerance PRECMZ_TOLERANCE
-                        Precursor m/z tolerance (in ppm)
-  --rt_tolerance RT_TOLERANCE
-                        Retention time tolerance (in seconds)
-  --precinty_thre PRECINTY_THRE
-                        Precursor intensity threshold
-  --csv CSV             CSV file path including precmz and rt columns, default is None
-
-
 ### Example
 
 ```shell
@@ -77,6 +55,44 @@ This command processes the input.mzML file, corrects precursors and saves the pr
 python mzml2gnps.py -i /path/to/input -o /path/to/output --correct
 ```
 This command processes all the files endwith .mzML in the input folder, corrects precursors and saves the processed spectra to the output path.
+
+### Command Line Arguments
+
+The script supports the following command-line arguments:
+
+#### General Options:
+- `-h, --help`  
+  Show the help message and exit.
+- `--version`  
+  Show the program's version number and exit.
+
+#### Input and Output:
+- `-i INPUT_PATH, --input_path INPUT_PATH`  
+  Specify the input mzML file path or folder containing mzML files.
+- `-o OUTPUT_PATH, --output_path OUTPUT_PATH`  
+  Specify the output folder path.
+
+#### Processing Options:
+- `--correct`  
+  Enable precursor correction (default is `False`).
+- `--merge`  
+  Enable spectra merging (default is `False`).
+
+#### Filtering Criteria:
+- `--precmz PRECMZ`  
+  Path to a CSV file containing a list of precursor m/z values.
+- `--rt RT`  
+  Path to a CSV file containing a list of retention times.
+- `--precmz_tolerance PRECMZ_TOLERANCE`  
+  Precursor m/z tolerance (in ppm).
+- `--rt_tolerance RT_TOLERANCE`  
+  Retention time tolerance (in seconds).
+- `--precinty_thre PRECINTY_THRE`  
+  Precursor intensity threshold.
+
+#### Combined Input:
+- `--csv CSV`  
+  Path to a CSV file containing both precursor m/z and retention time columns (default is `None`).
 
 Development
 This script was developed using Python and relies on the pyopenms library for handling mzML files and MS data processing.
