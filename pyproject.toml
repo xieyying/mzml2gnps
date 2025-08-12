@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mzml2gnps"
-version = "0.1.0"
+version = "1.0.4"
 authors = [{name = "YunyingXie", email = "xieyy@imb.pumc.edu.cn"}]
 description = "A package for preprocessing mzML files for GNPS molecular networking"
 readme = "README.md"
@@ -27,7 +27,7 @@ classifiers = [
 # python-requires = ">=3.7"
 
 [project.scripts]
-mzml2gnps = "mzml2gnps.command_line:main"
+mzml2gnps = "mzml2gnps.mzml2gnps_cli:main"
 
 [project.urls]
 homepage = "https://github.com/xieyying/mzml2gnps"

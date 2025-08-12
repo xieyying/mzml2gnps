@@ -62,7 +62,7 @@ The script can be executed from the command line with various arguments to speci
 ```shell
 python mzml2gnps.py --file_path input.mzML --output_path /path/to/output --correct
 
-This command processes the input.mzML file, corrects precursors, merges spectra, and saves the processed spectra to the specified output path.
+This command processes the input.mzML file, corrects precursors and saves the processed spectra to the specified output path.
 
 Development
 This script was developed using Python and relies on the pyopenms library for handling mzML files and MS data processing.
