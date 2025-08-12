@@ -1,2 +1,0 @@
-[console_scripts]
-mzml2gnps = mzml2gnps.command_line:main
